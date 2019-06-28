@@ -1,0 +1,25 @@
+#!/bin/sh
+
+NAME=YKAppMonitor
+DAEMON=/usr/bin/$NAME
+PIDFILE=/var/run/$NAME.pid
+
+case "$1" in
+	start)
+	if [ -f /usr/bin/fw_printenv ];then
+		if [ ! -f "/usr/bin/fw_setenv" ];then
+			ln -s /usr/bin/fw_printenv /usr/bin/fw_setenv
+		fi
+	fi
+	
+    ;;
+	
+	stop)
+	;;
+	
+    *)
+	echo "Usage: $0 {start | stop}"
+	exit 1
+    ;;
+esac
+

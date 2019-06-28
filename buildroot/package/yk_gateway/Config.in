@@ -1,0 +1,4 @@
+config BR2_PACKAGE_YK_GATEWAY
+	bool "yekert smartHome gateWay"
+	help
+	  SmartHome gateWay package
